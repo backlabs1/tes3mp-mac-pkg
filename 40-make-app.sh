@@ -5,7 +5,7 @@ set -ex
 readonly OSG_VERSION="3.6.5"
 
 mkdir -p testbox
-rm -rf testbox/OpenMW.app
+rm -rf testbox/OpenMW.app testbox/TES3MP.app
 cp -R out/src/TES3MP/build/OpenMW.app testbox/OpenMW.app
 mkdir -p testbox/OpenMW.app/Contents/Frameworks
 mkdir -p testbox/OpenMW.app/Contents/PlugIns
