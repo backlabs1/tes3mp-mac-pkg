@@ -30,7 +30,8 @@ source directory on a MacOS machine.
 
 For building from source, you will need:
 - Xcode 15 Command Line Tools
-- `brew install coreutils gnu-sed nasm ninja meson patchutils create-dmg`
+- `brew install coreutils create-dmg gnu-sed meson nasm ninja patchutils
+  python-setuptools`
 
 ## License
 This repository is licensed under the GNU General Public License v3.0 - see the
