@@ -104,7 +104,6 @@ download_tar "https://download.qt.io/official_releases/qt/5.15/5.15.10/single/qt
 clone "https://github.com/lz4/lz4.git" "$SRC/lz4" "$LZ4_TAG"
 clone "https://github.com/LuaJIT/LuaJIT.git" "$SRC/luajit" "$LUAJIT_TAG"
 clone "https://github.com/MyGUI/mygui" "$SRC/mygui" "$MYGUI_TAG"
-clone "http://github.com/lz4/lz4" "$SRC/lz4" "$LZ4_TAG"
 clone "https://github.com/twogood/unshield" "$SRC/unshield" "$UNSHIELD_TAG"
 clone "https://github.com/TES3MP/CrabNet" "$SRC/raknet" "$RAKNET_HASH"
 clone "https://github.com/TES3MP/CoreScripts.git" "$SRC/CoreScripts" "$CORESCRIPTS_TAG"
