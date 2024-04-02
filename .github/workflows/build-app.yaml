@@ -7,12 +7,12 @@ jobs:
     steps:
       - name: Select Xcode 15
         run: sudo xcode-select -s '/Applications/Xcode_15.0.1.app/Contents/Developer'
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: brew install coreutils create-dmg gnu-sed meson nasm ninja patchutils python-setuptools
       - name: Build
         run: ./build.sh
       - name: Save .dmg as an artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: release
           path: "*.dmg"
