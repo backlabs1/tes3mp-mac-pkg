@@ -41,10 +41,15 @@ mkdir -p "$SRC"
 download_tar "https://ftp.gnu.org/gnu/libiconv/libiconv-1.17.tar.gz" \
     "$SRC/iconv" \
     "8f74213b56238c85a50a5329f77e06198771e70dd9a739779f4c02f65d971313"
-# TODO: Check the sha256
-curl -o "$SRC/iconv-patch-utf8mac.diff" https://raw.githubusercontent.com/Homebrew/patches/9be2793af/libiconv/patch-utf8mac.diff
+patch_path="$SRC/iconv-patch-utf8mac.diff"
+if ! [ -e $patch_path ]; then
+    curl -o "$patch_path" \
+         https://raw.githubusercontent.com/Homebrew/patches/9be2793af/libiconv/patch-utf8mac.diff
+fi
+echo "e8128732f22f63b5c656659786d2cf76f1450008f36bcf541285268c66cabeab" \
+     "$patch_path" | sha256sum --check --status || exit 1
 pushd "$SRC/iconv"
-patch -p1 < "$SRC/iconv-patch-utf8mac.diff"
+patch -p1 < "$patch_path"
 popd
 
 download_tar "https://downloads.sourceforge.net/project/lzmautils/xz-5.4.3.tar.gz" \
